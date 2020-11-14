@@ -26,6 +26,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    task wrapper(type: Wrapper){
+        gradleVersion = '2.7'
+    }
+    task prepareKotlinBuildScriptModel {
+
+    }
 }
 
 dependencies {
