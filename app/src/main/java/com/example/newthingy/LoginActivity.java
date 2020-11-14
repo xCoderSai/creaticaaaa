@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity
                     else
                     {
                         /* Allow the user in to your app by going into the next activity */
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, LocationSelectorActivity.class));
                     }
 
                 }
