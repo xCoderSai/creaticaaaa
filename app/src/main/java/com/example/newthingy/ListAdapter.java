@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private String[] localDataSet;
+    private Facility[] localDataSet;
     private LayoutInflater mInflater;
 
-    public ListAdapter(Context context, String[] dataset) {
+    public ListAdapter(Context context, Facility[] dataset) {
         mInflater = LayoutInflater.from(context);
         localDataSet = dataset;
     }
@@ -27,7 +27,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(localDataSet[position]);
+        Facility curr = localDataSet[position];
+        holder.text_place.setText(curr.name);
+        holder.text_address.setText(curr.address);
+        holder.text_cityState.setText(curr.getCityState());
     }
 
     @Override
@@ -36,12 +39,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView textView;
+        public final TextView text_place;
+        public final TextView text_address;
+        public final TextView text_cityState;
         final ListAdapter mAdapter;
 
         public ViewHolder(View view, ListAdapter adapter) {
             super(view);
-            textView = (TextView)view.findViewById(R.id.textView);
+
+            text_place = (TextView)view.findViewById(R.id.text_place);
+            text_address = (TextView)view.findViewById(R.id.text_address);
+            text_cityState = (TextView)view.findViewById(R.id.text_cityState);
             this.mAdapter = adapter;
         }
     }

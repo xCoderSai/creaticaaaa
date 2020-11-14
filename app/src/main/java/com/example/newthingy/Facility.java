@@ -1,8 +1,8 @@
 package com.example.newthingy;
 
 public class Facility {
-    private String name;
-    private String address;
+    String name;
+    String address;
     private String city;
     private String state;
 
@@ -11,5 +11,9 @@ public class Facility {
         this.address = address;
         this.city = city;
         this.state = state;
+    }
+
+    public String getCityState() {
+        return city + ", " + state;
     }
 }

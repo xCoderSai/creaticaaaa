@@ -11,13 +11,17 @@ public class MainActivity extends FragmentActivity {
     private RecyclerView mRecyclerView;
     private ListAdapter mAdapter;
 
+    private Facility[] dummyData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dummyData = new Facility[]{new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX"), new Facility("Addison's Cafe", "1212 Baker St.", "Swag","TX")};
+
         mRecyclerView = findViewById(R.id.recyclerView);
-        mAdapter = new ListAdapter(this, new String[]{"hello"});
+        mAdapter = new ListAdapter(this, dummyData);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
