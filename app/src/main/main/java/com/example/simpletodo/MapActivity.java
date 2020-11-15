@@ -63,7 +63,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
-    LatLng sydney = new LatLng(29.9690671, -95.696273);
+    LatLng cypress = new LatLng(29.9690671, -95.696273);
         mMap.addMarker(new MarkerOptions()
                 .position(cypress)
                 .title("Target"));
