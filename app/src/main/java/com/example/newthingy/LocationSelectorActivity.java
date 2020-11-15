@@ -39,4 +39,10 @@ public class LocationSelectorActivity extends AppCompatActivity {
             text_zip.setError("Please try again");
         }
     }
+
+    public void openMap(View v) {
+        Intent newIntent = new Intent(LocationSelectorActivity.this, MapsActivity.class);
+        startActivity(newIntent);
+        //Open new activity
+    }
 }
